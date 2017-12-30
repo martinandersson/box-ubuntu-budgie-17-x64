@@ -38,7 +38,12 @@ set -x
 apt-add-repository -y ppa:teejee2008/ppa
 apt update
 apt install -y ukuu
+
+# Expect new kernel to crash, sadly enough..
+set +e
 ukuu --install v4.14.9
+
 # (old kernels removed in part 2)
 
-echo System upgraded. Please reboot and run part 2.
+set +x
+echo '\nSystem upgraded. Please reboot and run part 2.'
