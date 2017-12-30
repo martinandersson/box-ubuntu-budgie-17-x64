@@ -10,7 +10,7 @@
 # 
 # Last edit: 2017-12-29
 
-EXPECT_KERNEL=4.13.0-21-generic
+EXPECT_KERNEL=4.13.0-16-generic
 
 # Exit immediately on failure
 set -e
@@ -23,6 +23,7 @@ apt -y full-upgrade
 
 # (Kernel must be upgraded before Guest Additions or VBoxService will fail to start)
 
+set +x
 if [ "$(uname -r)" != $EXPECT_KERNEL ]; then
   echo '\nYour kernel is not the one expected lol.'
   echo '  Expected:' $EXPECT_KERNEL
@@ -32,6 +33,7 @@ if [ "$(uname -r)" != $EXPECT_KERNEL ]; then
   echo Aborting..
   exit 1
 fi
+set -x
 
 apt-add-repository -y ppa:teejee2008/ppa
 apt update
