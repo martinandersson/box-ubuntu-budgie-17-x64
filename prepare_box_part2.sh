@@ -75,3 +75,7 @@ apt install -y openssh-server
 # Install extra stuff for backwards compatibility with Vagrant < 2.0.2
 # Fixes https://github.com/hashicorp/vagrant/issues/9134
 apt install -y net-tools ifupdown
+
+set +x
+echo '\nA bunch of software successfully installed.'
+echo Manually finish the customization of the OS before running part 3.
