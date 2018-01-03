@@ -5,9 +5,9 @@
 # 
 # This script needs superman powers. Run like so:
 # 
-#   sudo sh prepare_box_part1.sh
+#   sudo sh prepare1.sh
 # 
-# Last edit: 2017-12-31
+# Last edit: 2018-01-02
 
 VBOX_VERSION=5.2.4
 

@@ -5,9 +5,9 @@
 # 
 # This script needs superman powers. Run like so:
 # 
-#   sudo sh prepare_box_part2.sh
+#   sudo sh prepare2.sh
 # 
-# Last edit: 2017-12-31
+# Last edit: 2018-01-02
 
 # Exit immediately on failure
 set -e
