@@ -221,9 +221,9 @@ folder feature *does* work. So, I'd say it's safe to ignore the message.
 
 ## Theming and customization
 
-The setup script we executed (one of two parts/scripts we will execute) removed
-the dock app "Plank". This dock is still visible because we haven't restarted
-the machine after running the script. Either, 1) restart or 2) manually quit the
+The setup script we executed (one of two parts/scripts in total) removed the
+dock app "Plank". This dock is still visible because we haven't restarted the
+machine after running the script. Either, 1) restart or 2) manually quit the
 dock (Ctrl + right mouse button to bring up the menu). I chose number 2.
 
 If we did restart, and then opened the Chromium web browser, it would also
