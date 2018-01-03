@@ -350,9 +350,9 @@ Run:
 
 Make sure:
 
-- The hostname and network settings has an effect
-- The project folder is synced back and forth
-- The clipboard is bidirectional
+- The hostname and network settings has an effect.
+- The project folder is synced back and forth.
+- The clipboard is bidirectional.
 
 Run:
 
