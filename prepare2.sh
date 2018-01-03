@@ -1,14 +1,13 @@
 # Prepares an Ubuntu Budgie 17 VM instance to be exported as a Vagrant box.
 # 
-# Part 1: OS and kernel upgrades.
-# Part 2: Install tons of software and apply Vagrant hacks.
-# Part 3: Clean system.
+# Part 1: Install tons of software and apply Vagrant hacks.
+# Part 2: Clean system.
 # 
 # This script needs superman powers. Run like so:
 # 
 #   sudo sh prepare_box_part2.sh
 # 
-# Last edit: 2017-12-29
+# Last edit: 2017-12-31
 
 # Exit immediately on failure
 set -e
@@ -21,7 +20,6 @@ apt --purge -y autoremove arc-theme
 apt --purge autoremove
 apt-get clean
 
-shopt -s dotglob
 rm -rf /var/log/*
 rm -rf /home/vagrant/.cache/*
 rm -rf /root/.cache/*
@@ -44,5 +42,5 @@ rm -f zerofile
 sync
 
 set +x
-echo 'All done. Shutdown and package the box!'
+echo '\nAll done. Shutdown and package the box!'
 history -c    # <-- clear this sessions's bash history

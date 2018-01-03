@@ -1,14 +1,13 @@
 # Prepares an Ubuntu Budgie 17 VM instance to be exported as a Vagrant box.
 # 
-# Part 1: OS and kernel upgrades.
-# Part 2: Install tons of software and apply Vagrant hacks.
-# Part 3: Clean system.
+# Part 1: Install tons of software and apply Vagrant hacks.
+# Part 2: Clean system.
 # 
 # This script needs superman powers. Run like so:
 # 
-#   sudo sh prepare_box_part2.sh
+#   sudo sh prepare_box_part1.sh
 # 
-# Last edit: 2017-12-29
+# Last edit: 2017-12-31
 
 VBOX_VERSION=5.2.4
 
@@ -18,14 +17,15 @@ set -e
 # Print the commands as they are executed
 set -x
 
-ukuu --remove v4.13.0-16.19
-ukuu --remove v4.13.0.21.22
-ukuu --remove v4.13.0-21.24
-
-apt install -y libelf-dev gcc make
+apt install -y gcc make
 wget http://download.virtualbox.org/virtualbox/$VBOX_VERSION/VBoxGuestAdditions_$VBOX_VERSION.iso
 mount -o loop,ro VBoxGuestAdditions_$VBOX_VERSION.iso /mnt
+
+# Yes, it is expected this guy fails..
+set +e
 /mnt/VBoxLinuxAdditions.run
+set -e
+
 umount /mnt
 rm VBoxGuestAdditions_$VBOX_VERSION.iso
 unset VBOX_VERSION
@@ -48,7 +48,9 @@ add-apt-repository -y ppa:papirus/papirus
 apt update
 apt install -y papirus-icon-theme
 
-apt install fonts-hack-ttf
+apt install -y fonts-noto
+
+apt install fonts-hack-otf
 
 # Make taskbar just a tiny bit transparent
 echo '.budgie-panel {background-color: rgba(0, 0, 0, 0.8);}' > /home/vagrant/.config/gtk-3.0/gtk.css
@@ -59,15 +61,17 @@ DEST=/usr/share/backgrounds/Xplo_by_Hugo_Cliff.png
 sudo wget $SRC -O $DEST
 
 # Authorize Vagrant's insecure public SSH key
+mkdir /home/vagrant/.ssh/
+chmod 700 /home/vagrant/.ssh/
 wget https://raw.githubusercontent.com/hashicorp/vagrant/master/keys/vagrant.pub -O /home/vagrant/.ssh/authorized_keys
 chmod 600 /home/vagrant/.ssh/authorized_keys
-chown vagrant: /home/vagrant/.ssh/authorized_keys
+chown -R vagrant: /home/vagrant/.ssh/
 
 # Set root password to "vagrant"
 echo root:vagrant | chpasswd
 
 # Passwordless sudo
-echo $'\nvagrant ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
+echo '\nvagrant ALL=(ALL) NOPASSWD: ALL' >> /etc/sudoers
 
 # Install an SSH server
 apt install -y openssh-server
@@ -77,5 +81,5 @@ apt install -y openssh-server
 apt install -y net-tools ifupdown
 
 set +x
-echo '\nA bunch of software successfully installed.'
-echo Manually finish the customization of the OS before running part 3.
+echo '\nSoftware packages are now up to date.'
+echo Manually finish the customization of the OS before running part 2.
