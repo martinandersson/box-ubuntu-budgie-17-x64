@@ -165,7 +165,7 @@ Password = `vagrant`.
 
 After restart, Ubuntu asks you to remove the installation medium. For whatever
 reason - and maybe this is only a phenomena local to my machine - but when I
-clicked on "restart now", my installation medium will automagically unmount. So
+clicked on "Restart Now", my installation medium will automagically unmount. So
 all I need to do on this screen is to hit ENTER.
 
 ![Remove medium][install-img-11]
