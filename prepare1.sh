@@ -17,6 +17,22 @@ set -e
 # Print the commands as they are executed
 set -x
 
+
+
+# Fix: 
+DIR=/mnt/sdb1/etc/systemd/system/apt-daily.timer.d
+mkdir $DIR
+
+echo '[Timer]
+OnCalendar=
+OnBootSec=15min
+OnUnitActiveSec=1d
+AccuracySec=1h
+RandomizedDelaySec=30min
+Persistent=false' > $DIR/delayed-start-after-boot.conf
+
+
+
 apt install -y gcc make
 wget http://download.virtualbox.org/virtualbox/$VBOX_VERSION/VBoxGuestAdditions_$VBOX_VERSION.iso
 mount -o loop,ro VBoxGuestAdditions_$VBOX_VERSION.iso /mnt

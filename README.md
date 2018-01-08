@@ -192,12 +192,12 @@ Open a terminal and run:
     sudo apt full-upgrade -y
 
 If the upgrade crash because a lock file is being in use, then it's probably
-cuz `unattended-upgrades` or something else is running in the background. It's
-possible to circumvent this obstacle by manually deleting lock files
-`/var/lib/dpkg/lock` and `/var/cache/apt/archives/lock`. I could never cheat the
-system, however. Deleting the lock files never made me able to fully complete
-the upgrade without additional problems. My advice is to wait a few minutes
-(actually, more like 5-10 minutes) and then try again.
+cuz `unattended-upgrades` is running in the background. It's possible to
+circumvent this obstacle by manually deleting lock files `/var/lib/dpkg/lock`
+and `/var/cache/apt/archives/lock`. I could never cheat the system, however.
+Deleting the lock files never made me able to fully complete the upgrade without
+additional problems. My advice is to wait a few minutes (actually, more like
+5-10 minutes) and then try again ([more info][upgrade-1]).
 
 After the upgrade completes, **restart**. If you don't restart, there will be a
 lot of problems lol. Especially so if the kernel was upgraded.
@@ -218,6 +218,8 @@ and this guy is sort of responsible for shit related to "shared folders".
 Luckily, this message appears to be a false flag. `lsmod` would, after a fresh
 reboot, list `vboxsf`. Plus, as will become evident later, Vagrant's shared
 folder feature *does* work. So, I'd say it's safe to ignore the message.
+
+[upgrade-1]: https://github.com/martinanderssondotcom/box-ubuntu-budgie-17-x64/issues/3
 
 ## Theming and customization
 

@@ -25,7 +25,12 @@ new Linux kernel, upgraded software packages and so on. Having that said, the
 
 - This changelog.
 
+### Fixed
+
+- [issue #3][unreleased-2]
+
 [unreleased-1]: https://github.com/martinanderssondotcom/box-ubuntu-budgie-17-x64/compare/v10.0.0...HEAD
+[unreleased-2]: https://github.com/martinanderssondotcom/box-ubuntu-budgie-17-x64/issues/3
 
 ## 10.0.0 - 2018-01-02
 
