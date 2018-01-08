@@ -21,16 +21,22 @@ new Linux kernel, upgraded software packages and so on. Having that said, the
 
 ## [Unreleased][unreleased-1]
 
+- Nothing, yet.
+
+[unreleased-1]: https://github.com/martinanderssondotcom/box-ubuntu-budgie-17-x64/compare/v10.0.1...HEAD
+
+## [10.0.1][1001-1] - 2018-01-07
+
 ### Added
 
 - This changelog.
 
 ### Fixed
 
-- [issue #3][unreleased-2]
+- [issue #3][1001-2]
 
-[unreleased-1]: https://github.com/martinanderssondotcom/box-ubuntu-budgie-17-x64/compare/v10.0.0...HEAD
-[unreleased-2]: https://github.com/martinanderssondotcom/box-ubuntu-budgie-17-x64/issues/3
+[1001-1]: https://github.com/martinanderssondotcom/box-ubuntu-budgie-17-x64/compare/v10.0.1...HEAD
+[1001-2]: https://github.com/martinanderssondotcom/box-ubuntu-budgie-17-x64/issues/3
 
 ## 10.0.0 - 2018-01-02
 
