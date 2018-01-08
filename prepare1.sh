@@ -7,7 +7,7 @@
 # 
 #   sudo sh prepare1.sh
 # 
-# Last edit: 2018-01-02
+# Last edit: 2018-01-07
 
 VBOX_VERSION=5.2.4
 
