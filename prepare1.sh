@@ -19,7 +19,7 @@ set -x
 
 
 
-# Fix: 
+# Fixes this: https://github.com/martinanderssondotcom/box-ubuntu-budgie-17-x64/issues/3
 DIR=/mnt/sdb1/etc/systemd/system/apt-daily.timer.d
 mkdir $DIR
 
