@@ -31,7 +31,7 @@ new Linux kernel, upgraded software packages and so on. Having that said, the
 
 - This changelog.
 
-### Fixed
+### Improved
 
 - [issue #3][1001-2]
 

@@ -7,7 +7,7 @@
 # 
 #   sudo sh prepare1.sh
 # 
-# Last edit: 2018-01-07
+# Last edit: 2018-01-10
 
 VBOX_VERSION=5.2.4
 
@@ -19,7 +19,7 @@ set -x
 
 
 
-# Fixes this: https://github.com/martinanderssondotcom/box-ubuntu-budgie-17-x64/issues/3
+# Improves on this: https://github.com/martinanderssondotcom/box-ubuntu-budgie-17-x64/issues/3
 DIR=/etc/systemd/system/apt-daily.timer.d
 mkdir $DIR
 
