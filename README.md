@@ -44,20 +44,22 @@ order to get a Virtual Machine up and running with Ubuntu Budgie 17 is:
     vagrant up
 
 **Be warned**: A few noteworthy issues exist with products in the ecosystem we
-depend on. For starters, Vagrant < 2.0.2 can't configure hostname and network on
-Ubuntu 17.10 (see this [issue][using-3]). `net-tools` and `ifupdown` have been
-added to the box for backward compatibility with older Vagrant versions.
+depend on.
 
-If you are running an older version of Vagrant (< 2.0.2) and if you configured a
-hostname and/or network details, then after the first start of the VM a spinning
-circular icon will be displayed in the bottom-right corner of the taskbar
-instead of the normal Wi-Fi icon. The hostname and network still work even in
-the first user session, but the icon will only become normal after a couple of
-minutes or after the second boot.
+For starters, Vagrant < 2.0.2 can't configure a hostname and network on Ubuntu
+17.10 (see this [issue][using-3]). `net-tools` and `ifupdown` have been added to
+the box for backward compatibility with older Vagrant versions.
 
-Also, VirtualBox's 3D acceleration is like broken and if enabled, will probably
-make the machine so slow it's not going to be usable anymore. Don't enable it.
-See [this issue][using-4].
+The added packages do not fully solve the problem. The first `vagrant up` call
+does not crash and Internet will work during the first user session, but the VM
+will not be accessible using the new hostname or static IP until after a VM
+restart. Plus, what normally is a Wi-Fi icon in the bottom right corner of the
+screen will be switched to a spinning circular icon. The icon will reset to
+normal after a few minutes.
+
+Another issue is that VirtualBox's 3D acceleration is like broken and if
+enabled, will probably make the machine so slow it's not going to be usable
+anymore. Don't enable it. See [this issue][using-4].
 
 [using-1]: https://www.vagrantup.com/
 [using-2]: https://www.virtualbox.org/wiki/Downloads
