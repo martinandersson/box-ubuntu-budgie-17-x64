@@ -23,7 +23,7 @@ new Linux kernel, upgraded software packages and so on. Having that said, the
 
 - Nothing, yet.
 
-[unreleased-1]: https://github.com/martinanderssondotcom/box-ubuntu-budgie-17-x64/compare/v10.0.1...HEAD
+[unreleased-1]: https://github.com/martinanderssondotcom/box-ubuntu-budgie-17-x64/compare/v10.0.2...HEAD
 
 ## [10.0.2][1002-1] - 2018-01-30
 
