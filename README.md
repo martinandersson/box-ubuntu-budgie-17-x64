@@ -138,9 +138,11 @@ Mount the OS installation's ISO file (grab it [here][install-1]). Click on the
 little CD icon to the right in the next picture. Then select "Choose Virtual
 Optical Disk File...".
 
-The file I mounted was named: `ubuntu-budgie-17.10-desktop-amd64.iso`.
+The file I mounted was named: `ubuntu-budgie-17.10.1-desktop-amd64.iso`.
 
 ![Mount the Ubuntu ISO][install-img-1]
+
+Start the VM and follow suit.
 
 ![Welcome][install-img-2]
 
@@ -163,14 +165,13 @@ Password = `vagrant`.
 
 ![Installing][install-img-9]
 
-![Restart prompt][install-img-10]
+Once the installation is done, the happy path would be to make a clean restart
+and boot into a fresh OS. Alas, after numerous hackathons, I must conclude that
+this is impossible without ultra weird disk read failures and hangs. So, KISS:
+*power off* the machine using VirtualBox and then unmount the installation
+medium.
 
-After restart, Ubuntu asks you to remove the installation medium. For whatever
-reason - and maybe this is only a phenomena local to my machine - but when I
-clicked on "Restart Now", my installation medium will automagically unmount. So
-all I need to do on this screen is to hit ENTER.
-
-![Remove medium][install-img-11]
+![Power off][install-img-10]
 
 [install-1]: https://ubuntubudgie.org/downloads
 
@@ -183,12 +184,11 @@ all I need to do on this screen is to hit ENTER.
 [install-img-7]: screenshots/install/7-keyboard.png
 [install-img-8]: screenshots/install/8-user.png
 [install-img-9]: screenshots/install/9-installing.png
-[install-img-10]: screenshots/install/10-restart.png
-[install-img-11]: screenshots/install/11-remove-medium.png
+[install-img-10]: screenshots/install/10-power-off.png
 
 ## Upgrade the system
 
-Open a terminal and run:
+Boot up the VM and open a terminal (Tilix), run:
 
     sudo apt update
     sudo apt full-upgrade -y
@@ -204,7 +204,7 @@ additional problems. My advice is to wait a few minutes (actually, more like
 After the upgrade completes, **restart**. If you don't restart, there will be a
 lot of problems lol. Especially so if the kernel was upgraded.
 
-Open a terminal and run:
+Next, run:
 
     wget https://github.com/martinanderssondotcom/box-ubuntu-budgie-17-x64/raw/master/prepare1.sh
     sudo sh prepare1.sh
@@ -358,7 +358,7 @@ Make sure:
 - The project folder is synced back and forth.
 - The clipboard is bidirectional.
 
-Run:
+Run (you might wanna run the commands in the next section first!):
 
     vagrant destroy -f
     vagrant box remove ../ubuntu-budgie-17.box

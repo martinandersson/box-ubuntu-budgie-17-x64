@@ -7,9 +7,9 @@
 # 
 #   sudo sh prepare1.sh
 # 
-# Last edit: 2018-01-10
+# Last edit: 2018-01-30
 
-VBOX_VERSION=5.2.4
+VBOX_VERSION=5.2.6
 
 # Exit immediately on failure
 set -e

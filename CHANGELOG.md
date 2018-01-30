@@ -25,6 +25,15 @@ new Linux kernel, upgraded software packages and so on. Having that said, the
 
 [unreleased-1]: https://github.com/martinanderssondotcom/box-ubuntu-budgie-17-x64/compare/v10.0.1...HEAD
 
+## [10.0.2][1002-1] - 2018-01-30
+
+### Changed
+
+- Linux Kernel `4.13.0-32-generic` (was 4.13.0-21-generic).
+- VirtualBox Guest Additions `5.2.6r120293` (was 5.2.4r119785).
+
+[1002-1]: https://github.com/martinanderssondotcom/box-ubuntu-budgie-17-x64/compare/v10.0.1...v10.0.2
+
 ## [10.0.1][1001-1] - 2018-01-07
 
 ### Added
