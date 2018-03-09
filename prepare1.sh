@@ -34,7 +34,7 @@ Persistent=false' > $DIR/delayed-start-after-boot.conf
 
 
 apt install -y gcc make
-wget http://download.virtualbox.org/virtualbox/$VBOX_VERSION/VBoxGuestAdditions_$VBOX_VERSION.iso
+wget https://download.virtualbox.org/virtualbox/$VBOX_VERSION/VBoxGuestAdditions_$VBOX_VERSION.iso
 mount -o loop,ro VBoxGuestAdditions_$VBOX_VERSION.iso /mnt
 
 # Yes, it is expected this guy fails..
